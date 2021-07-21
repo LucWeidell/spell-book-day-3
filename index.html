@@ -22,13 +22,37 @@
         </nav>
     </header>
     <main class="container">
-        <div id="app"></div>
+        <div class="row col-md-3 side-bar-scroll">
+            <h3>All Spells</h3>
+            <ol id = "api-spells"></ol>
+        </div>
+        <div class="col-md-6" id = 'active-spell'>
+            <div class="bg-light m-3 p-3 shadow">
+                <div>
+                <h4>SPELL NAME</h4>
+                <p>Level: 1</p>
+                <p>Range: 90</p>
+                <p>Components: []</p>
+                <p>Duration: </p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos vero harum consectetur
+                    autem officiis assumenda, optio fuga expedita rerum. Possimus omnis suscipit hic beatae sit,
+                    temporibus ipsum laborum. Neque, voluptates!</p>
+            </div>
+            <div class="text-right">
+                <button type="button" class="btn btn-success">Add Button</button>
+            </div>
+        </div>
+    </div>
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">
-            <p><small>Made with love by Codeworks</small></p>
+            <p><small>Made with love by ripping off Marks work. Thank you!</small></p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+    // NOTE integrity here for man in middle attacks
+    </script>
 
     <script src="app/main.js" type="module"></script>
 </body>
