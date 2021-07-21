@@ -24,7 +24,7 @@ export default class Spell {
                 <p>Description: ${this.description}</p>
             </div>
             <div class="text-right">
-                <button type="button" class="btn btn-success">Add Button</button>
+                <button type="button" class="btn btn-success" onclick="app.mySpellsController.addSpell()">Add Button</button>
             </div>
     `
   }

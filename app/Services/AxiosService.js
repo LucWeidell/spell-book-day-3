@@ -5,6 +5,6 @@ export const dndApi = axios.create({
 
 export const sandbox = axios.create({
   // NOTE name in classroom
-  baseURL: 'https://bcw-sandbox.herokupp.com/api/classroom/spells',
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/classroom/spells',
   timeout: 5000
 })

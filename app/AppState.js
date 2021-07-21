@@ -8,6 +8,9 @@ class AppState extends EventEmitter {
 
   /** @type{Spell} */
   activeSpell = null
+
+  /** @type{Spell[]} */
+  mySpells = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
