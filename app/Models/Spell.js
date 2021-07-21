@@ -1,3 +1,6 @@
+import { ProxyState } from "../AppState.js";
+
+
 export default class Spell {
 
   constructor({id, name, description, desc, range, level, duration, components, index}){
@@ -9,6 +12,8 @@ export default class Spell {
     this.level = level
     this.duration = duration
     this.components = components
+
+    //this.isMyPokemon = form === undefined
 
   }
 
@@ -23,10 +28,25 @@ export default class Spell {
                 <p>Duration: ${this.duration}</p>
                 <p>Description: ${this.description}</p>
             </div>
-            <div class="text-right">
-                <button type="button" class="btn btn-success" onclick="app.mySpellsController.addSpell()">Add Button</button>
-            </div>
+            ${this.getButton()}
     `
+  }
+
+  getButton(){
+    const exists = ProxyState.mySpells.find(s=> s.name == ProxyState.activeSpell.name)
+      if (this.index) {
+      return `
+      <div class="text-right">
+      <button type="button" class="btn btn-success" onclick="app.mySpellsController.addSpell()" ${(exists) ? 'disabled' : ''}>Add Spell</button>
+     </div>
+     `
+    } else {
+      return `
+      <div class="text-right">
+      <button type="button" class="btn btn-danger" onclick="app.mySpellsController.removeSpell()" >Remove Spell</button>
+     </div>
+      `
+    }
   }
 }
 

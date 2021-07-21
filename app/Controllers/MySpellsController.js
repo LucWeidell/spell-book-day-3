@@ -4,7 +4,8 @@ import { mySpellsService } from "../Services/MySpellsService.js"
 function _drawAll(){
   let template = ''
   const spells = ProxyState.mySpells
-  spells.forEach(s => template += `<li class="action" onclick="app.mySpellsController.SetSpell('${s.id}')">${s.name}</li>`)
+  const activeSpell = ProxyState.activeSpell || {}
+  spells.forEach(s => template += `<li class="action" ${activeSpell.id == s.id ? 'text-primary' : ''} onclick="app.mySpellsController.SetSpell('${s.id}')">${s.name}</li>`)
   if(!template){
     template += `<li>No Spells in Book</li>`
   }
@@ -34,4 +35,22 @@ export default class MySpellsController {
       console.log('error adding spell to snadbox', error)
     }
   }
+
+  removeSpell(){
+    try {
+    mySpellsService.removeSpell()
+    } catch(error){
+      console.log('remove from mylist error:', error)
+    }
+  }
+
+  SetSpell(id){
+    try {
+    mySpellsService.SetSpell(id)
+    } catch(error){
+      console.log('setting from mylist erre:', error)
+    }
+  }
+
+
 }
