@@ -17,6 +17,7 @@ export default class DndApiSpellsController{
 
   constructor() {
     ProxyState.on('allDndApiSpells',_drawAll)
+    ProxyState.on('activeSpell',_drawActiveSpell)
 
     this.getAllSpells()
   }

@@ -13,8 +13,7 @@ export default class Spell {
   }
 
   get Template(){
-  return /*html*/
-    `
+  return /*html*/ `
     <div class="bg-light m-3 p-3 shadow">
       <div>
                 <h4 class = "uppercase">${this.name}</h4>
